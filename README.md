@@ -1,10 +1,18 @@
-# ToDo App using Django
+# Web Applictaion to organize photo gallery to AWS S3
 
 ![Python 3.7.3](https://img.shields.io/badge/Python-3.6-brightgreen.svg) ![Django 3.1.7](https://img.shields.io/badge/Django-3.1.7-skyblue.svg)
 
-• A simple and basic repository for a ToDo Application using **_Django_**.
+• A simple and basic photo gallery web application using **_Django_**.
 
-• It helps you in basic understanding of how can we perform **_CRUD_** operations.
+• It helps you in basic understanding of how we can store and read our images publicly from ***AWS S3***.
+
+• Using ***pillow*** to handle image content in Django.
+
+• Install the dependencies using below command.
+
+```sh
+$ pip install -r requiremensts.txt
+```
 
 • Utilized **_bootsrap_** elements to beautify the UI.
 
