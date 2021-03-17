@@ -1,0 +1,69 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Photo Gallery</title>
+</head>
+
+<body class="m-5">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-header">
+                        Featured
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <a href="{% url 'home' %}" style="text-decoration: none;">All</a>
+                        </li>
+                        {% for category in categories %}
+                        <li class="list-group-item">
+                            <a href="{% url 'home' %}?category={{category.name}}"
+                                style="text-decoration: none;">{{category.name}}</a>
+                        </li>
+                        {% endfor %}
+
+                        <a href="{% url 'add_photo' %}" class="btn btn-dark btn-block btn-sm m-1">Add Photo</a>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="row">
+                    {% for photo in photos %}
+                    <div class="col-4">
+                        <div class="card my-2" style="width: 18rem;">
+                            <img src="{{photo.image_url}}" class="image-thumbnail" alt="Unable to render the image">
+                            <div class="card-body">
+                                <p><strong>Category: </strong>{{photo.category.name}}</p>
+                            </div>
+                            <a class="btn btn-outline-dark btn-small m-1"
+                                href="{% url 'view_photo' photo.id %}">View</a>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <h2>No Photos...</h2>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
