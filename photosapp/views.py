@@ -23,6 +23,7 @@ def view_photo(request, pk):
 
 def add_photo(request):
     categories = Category.objects.all()
+
     if request.method == 'POST':
         data = request.POST
         # image = request.FILES.get('image') # for single image upload from template
@@ -45,3 +46,13 @@ def add_photo(request):
         return redirect('home')
 
     return render(request, 'photosapp/add.html', {'categories': categories})
+
+
+def delete_photo(request, pk):
+    photo_obj = Photo.objects.get(id=pk)
+
+    if request.method == 'POST':
+        photo_obj.delete()
+        return redirect('home')
+
+    return render(request, 'photosapp/delete.html', context={'photo': photo_obj})
