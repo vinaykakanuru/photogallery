@@ -5,6 +5,9 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignoring local images from static folder
+static/images 
+
 # C extensions
 *.so
 
