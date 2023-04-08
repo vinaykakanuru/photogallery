@@ -12,8 +12,7 @@
 
 ```sh
 $ virtualenv venv
-$ activate the venv created
-$ pip install -r requiremensts.txt
+$ pip install -r requirements.txt
 ```
 
 • Utilized "**_bootsrap_**" elements to beautify the UI.
