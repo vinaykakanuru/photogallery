@@ -48,6 +48,8 @@
                             </div>
                             <a class="btn btn-outline-dark btn-small m-1"
                                 href="{% url 'view_photo' photo.id %}">View</a>
+                            <a class="btn btn-outline-dark btn-danger btn-small m-1"
+                                href="{% url 'delete_photo' photo.id %}">Delete</a>
                         </div>
                     </div>
                     {% empty %}

@@ -16,6 +16,8 @@
         <div class="row justify-content-center">
             <div class="col">
                 <a class="btn btn-dark my-3" href="{% url 'home' %}">Home</a>
+                <a class="btn btn-outline-dark btn-danger btn-small m-1"
+                                href="{% url 'delete_photo' photo.id %}">Delete</a>
                 <div style="height: 90vh;">
                     <img style="max-height: 50%; max-width: 50%;" src="{{photo.image_url}}"
                         alt="Unable to render the image">
