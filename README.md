@@ -8,9 +8,11 @@
 
 • Using "**_pillow_**" to handle image content in Django.
 
-• Install the dependencies using below command.
+• To run the project first you need to create a virtualenv and install the dependencies from requirements.txt file using below command.
 
 ```sh
+$ virtualenv venv
+$ activate the venv created
 $ pip install -r requiremensts.txt
 ```
 
